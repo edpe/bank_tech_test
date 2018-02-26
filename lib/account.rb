@@ -2,6 +2,8 @@ class Account
 
   def initialize(initial_balance = 0.00)
     @balance = initial_balance
+    @history = {}
+
   end
 
   def balance
@@ -10,6 +12,15 @@ class Account
 
   def deposit(amount)
     @balance += amount
+    @history[:value]=amount
+  end
+
+  def withdrawal(amount)
+    @balance -= amount
+  end
+
+  def history
+    @history
   end
 
 end
