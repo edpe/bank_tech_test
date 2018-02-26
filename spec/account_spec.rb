@@ -16,7 +16,8 @@ describe Account do
 
   describe '#withdrawal' do
     it "deducts the deposited amount from the balance" do
-      expect { account.withdrawal 100.00 }.to change { account.balance }.by -100.00
+      expect { account.withdraw 100.00 }.to change { account.balance }.by -100.00
     end
   end
+
 end
