@@ -12,11 +12,6 @@ describe Account do
     it "adds the deposited amount to the balance" do
       expect { account.deposit 100.00 }.to change { account.balance }.by 100.00
     end
-
-    it "stores the deposited amount within the account history" do
-      account.deposit(100.00)
-      expect(account.history).to include(:value => 100.00)
-    end
   end
 
   describe '#withdrawal' do

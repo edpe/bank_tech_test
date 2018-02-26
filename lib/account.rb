@@ -12,7 +12,7 @@ class Account
 
   def deposit(amount)
     @balance += amount
-    @history[:value]=amount
+
   end
 
   def withdrawal(amount)
