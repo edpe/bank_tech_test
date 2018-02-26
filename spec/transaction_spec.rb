@@ -3,11 +3,14 @@ require 'timecop'
 
 describe Transaction do
 
-  subject(:transaction) { described_class.new(100, 100) }
+  subject(:transaction) { described_class.new(300, 200, 100) }
 
+  it "has a credit amount" do
+    expect(transaction.credit).to equal 300
+  end
 
-  it "has an amount" do
-    expect(transaction.amount).to equal 100
+  it "has a debit amount" do
+    expect(transaction.debit).to equal 200
   end
 
   it "reports the balance" do
@@ -16,7 +19,7 @@ describe Transaction do
 
   it "has the current date" do
     Timecop.freeze do
-      transaction = Transaction.new(100, 100)
+      transaction = Transaction.new(300, 200, 100)
       expect(transaction.date).to eq Time.now
     end
   end
